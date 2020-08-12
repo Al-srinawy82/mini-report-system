@@ -61,8 +61,9 @@
                       </div>
                       <div class="col-md-6" style="top: 6px !important;">
                         <br>
-                      <button type="button" class="btn btn-danger" data-toggle="popover" title="names" data-content="@foreach($not_yet as $names) {{$loop->iteration}}-{{$names->name}} @endforeach">{{$not_yet->count()}} Employees Doesn't Submit</button>
-
+                        @if(request()->input('month_id'))
+                        <button type="button" class="btn btn-danger" data-toggle="popover" title="names" data-content="@foreach($not_yet as $names) {{$loop->iteration}}-{{$names->name}} @endforeach">{{$not_yet->count()}} Employees Doesn't Submit</button>
+                        @endif
                       </div>
 
                           <div class="col-md-12">

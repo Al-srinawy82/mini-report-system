@@ -63,7 +63,9 @@ class TaskController extends Controller
 
         }else{
 
-            $currnt_month_tasks = Task::Where('month_id',$request->month_id)->latest(5);
+            $currnt_month_tasks = Task::Where('month_id',$request->month_id)->latest();
+            $not_yet = Employee::WhereNotIn('id', $currnt_month_tasks->pluck('employee_id'))->get();
+
             
         }
 
