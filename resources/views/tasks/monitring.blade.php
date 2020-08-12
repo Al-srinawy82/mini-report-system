@@ -38,9 +38,9 @@
                 <div class="card-heading">
                     <h2 class="title">Tasks Monitring</h2>
                 </div>
-                <div class="card-body">
+                <div class="card-body" style="padding-right: 30px !important; padding-left: 30px !important;">
 
-                  <div class="container">
+                  <div class="">
                       <div class="row">
                       <div class="col-md-6">
                           <form  method="GET" action="{{route('tasks-monitring')}}">
@@ -75,7 +75,8 @@
                                   <th scope="col">Project</th>
                                   <th scope="col">Month</th>
                                   <th scope="col">module</th>
-                                  <th scope="col">Documents</th>
+                                  <th scope="col">Title</th>
+                                  <th scope="col">Task Details</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -89,7 +90,33 @@
                                   <td>
                                   <a href="{{$currnt_month_task->url}}" target="_blanck">{{$currnt_month_task->deliverables->name}}</a>    
                                   </td>
+                                  <td>
+                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal{{$currnt_month_task->id}}">Show</button>
+                                  </td>
                                 </tr>
+
+
+                                <!-- Modal -->
+                                    <div class="modal fade" id="myModal{{$currnt_month_task->id}}" role="dialog">
+                                      <div class="modal-dialog">
+                                      
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title"></h4>
+                                          </div>
+                                          <div class="modal-body">
+                                            <p>{{$currnt_month_task->description}}</p>
+                                          </div>
+                                         
+                                        </div>
+                                        
+                                      </div>
+                                    </div>
+
+
+
                               @endforeach
                                   
                               </tbody>
@@ -98,6 +125,13 @@
                           </div>
                       </div>
                   </div>
+
+
+<!-- Trigger the modal with a button -->
+
+
+
+
 
             <script>
             $(document).ready(function(){
