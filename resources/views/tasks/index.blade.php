@@ -145,6 +145,19 @@
 
 
                         <div class="form-row">
+                            <div class="name">Module</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input value="{{old('module')}}" class="input--style-5" type="text" name="module">
+                                </div>
+                                @if($errors->first('module'))
+                                        <div style="color:red;">{{$errors->first('module')}}</div>
+                                @endif
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
                             <div class="name">Task Details</div>
                             <div class="value">
                                 <div class="input-group">

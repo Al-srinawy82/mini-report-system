@@ -29,22 +29,23 @@ class TaskController extends Controller
 
     public function store_task(TaskStoreValidation $request){
 
-        //   $task = new Task ;
+          $task = new Task ;
 
-    //   $task->employee_id = $request->employee_id;
-    //   $task->month_id = $request->month_id;
-    //   $task->title = $request->title;
-    //   $task->description = $request->description;
-    //   $task->url = $request->url;
-    //   $task->deliverable_id = $request->deliverable_id;
-    //   $task->project_id = $request->project_id;
+      $task->employee_id = $request->employee_id;
+      $task->month_id = $request->month_id;
+      $task->title = $request->title;
+      $task->description = $request->description;
+      $task->url = $request->url;
+      $task->module = $request->module;
+      $task->deliverable_id = $request->deliverable_id;
+      $task->project_id = $request->project_id;
 
-    //   $task->save();
+      $task->save();
       
 
        
         
-    //     return redirect()->back();
+        return redirect()->back();
 
     }
 

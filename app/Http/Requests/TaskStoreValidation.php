@@ -28,6 +28,7 @@ class TaskStoreValidation extends FormRequest
             'month_id' => 'required|integer',
             'description' => 'required|String',
             'url' => 'required|URL',
+            'module' => 'required|String|max:191',
             'deliverable_id' => 'required|integer',
             'project_id' => 'required|integer',
         ];
@@ -44,6 +45,7 @@ class TaskStoreValidation extends FormRequest
             'url.required'=>'Url Is Required',
             'deliverable_id.required'=>'Deliverable Is Required',
             'project_id.required'=>'Project Is Required',
+            'module.required'=>'Module Is Required',
             "*.integer"=> 'Filde Must Be An Integer',
             "*.URL"=> 'Filde Must Be Url',
         ];

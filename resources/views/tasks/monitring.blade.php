@@ -74,6 +74,7 @@
                                   <th scope="col">Name</th>
                                   <th scope="col">Project</th>
                                   <th scope="col">Month</th>
+                                  <th scope="col">module</th>
                                   <th scope="col">Documents</th>
                                 </tr>
                               </thead>
@@ -84,6 +85,7 @@
                                   <td>{{$currnt_month_task->employee->name}}</td>
                                   <td>{{$currnt_month_task->project->name}}</td>
                                   <td>{{$currnt_month_task->month->name}}</td>
+                                  <td>{{$currnt_month_task->module}}</td>
                                   <td>
                                   <a href="{{$currnt_month_task->url}}" target="_blanck">{{$currnt_month_task->deliverables->name}}</a>    
                                   </td>
