@@ -29,7 +29,7 @@ class TaskController extends Controller
 
     public function store_task(TaskStoreValidation $request){
 
-          $task = new Task ;
+      $task = new Task ;
 
       $task->employee_id = $request->employee_id;
       $task->month_id = $request->month_id;
@@ -45,7 +45,15 @@ class TaskController extends Controller
 
        
         
-        return redirect()->back();
+      $employees = Employee::Select('id', 'name')->get();
+      $months = Month::Select('id', 'name')->get();
+      $projects = Project::Select('id', 'name')->get();
+      $deliverables = Deliverable::Select('id', 'name')->get();
+      
+
+
+      return view('tasks.index',compact('employees', 'months', 'projects', 'deliverables'));
+
 
     }
 
