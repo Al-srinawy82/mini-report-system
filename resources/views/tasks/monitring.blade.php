@@ -32,11 +32,18 @@
 </head>
 
 <body>
-    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+    <div class="page-wrapper bg-gra-0010 p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
-                <div class="card-heading">
-                    <h2 class="title">Tasks Monitring</h2>
+                <div class="card-heading" style="display:flex;">
+
+                    <div class="">
+                        <img  src="/images/logo.png" alt=""  width="300" >
+                    </div>
+
+                    <div class="title " style="margin:auto">
+                    Tasks Monitring
+                    </div>
                 </div>
                 <div class="card-body" style="padding-right: 30px !important; padding-left: 30px !important;">
 
@@ -55,7 +62,8 @@
                                   </select>
                               </div>
                               <div class="form-group">
-                                  <button type="submit" class="btn btn-success">Search</button>    
+                                  <button type="submit" class="btn btn--radius-2 btn--blue" style="color: #fff;">Search</button>    
+
                               </div>
                           </form>
                       </div>

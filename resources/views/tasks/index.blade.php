@@ -27,11 +27,17 @@
 </head>
 
 <body>
-    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+    <div class="page-wrapper bg-gra-0010 p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
-                <div class="card-heading">
-                    <h2 class="title">Submit Your Task</h2>
+                <div  class="card-heading" style="display:flex;">
+                    <div class="">
+                        <img  src="/images/logo.png" alt=""  width="300" >
+                    </div>
+
+                    <div class="title " style="margin:auto">
+                        Submit Your Task
+                    </div>
                 </div>
                 <div class="card-body">
                 <form  method="POST" action="{{route('store-task')}}">
@@ -108,8 +114,8 @@
                             </div>
                         </div>
 
-
-                        <div class="form-row">
+                        <div id="divcontainer">
+                        <div class="form-row appendme">
                             <div class="name">Choose Deliverables</div>
                             <div class="value">
                                 <div class="input-group">
@@ -131,7 +137,7 @@
                         </div>
 
 
-                        <div class="form-row">
+                        <div class="form-row appendme">
                             <div class="name">Task Documents Url</div>
                             <div class="value">
                                 <div class="input-group">
@@ -143,6 +149,8 @@
                             </div>
                         </div>
 
+                        
+                       
 
                         <div class="form-row">
                             <div class="name">Module</div>
@@ -168,11 +176,11 @@
                                 @endif
                             </div>
                         </div>
-
+                     
                     
                  
                         <div>
-                            <button class="btn btn--radius-2 btn--red" type="submit">Submit</button>
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -190,6 +198,17 @@
     <!-- Main JS-->
     <script src="/form/js/global.js"></script>
     
+
+<!-- <script>
+
+$(".appendbtn").click(function () {
+   $("#divcontainer").append('<div class="form-row appendme"><div class="name">Choose Deliverables</div><div class="value"><div class="input-group"><div class="rs-select2 js-select-simple select--no-search"><select name="deliverable_id"><option  disabled="disabled" selected="selected">Choose Deliverable</option>@foreach($deliverables as $deliverable)<option value="{{$deliverable->id}}">{{$deliverable->name}}</option>@endforeach</select><div class="select-dropdown"></div></div>@if($errors->first('deliverable_id'))<div style="color:red;">{{$errors->first('deliverable_id')}}</div>@endif</div></div></div><div class="form-row appendme"><div class="name">Task Documents Url</div><div class="value"><div class="input-group"><input value="{{old('url')}}" class="input--style-5" type="text" name="url"></div>@if($errors->first('url'))<div style="color:red;">{{$errors->first('url')}}</div>@endif</div>');
+   
+});
+
+
+</script> -->
+<!-- <button class="appendbtn" type="button">Click to append</button> -->
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
