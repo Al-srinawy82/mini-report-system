@@ -128,11 +128,7 @@
                   </div>
 
 
-<!-- Trigger the modal with a button -->
-
-
-
-
+            <!-- Trigger the modal with a button -->
 
             <script>
             $(document).ready(function(){
