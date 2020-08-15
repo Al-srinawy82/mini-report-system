@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','TaskController@index');
+Route::get('/','TaskController@index')->name('/');
 Route::post('store-task','TaskController@store_task')->name('store-task');
 Route::get('tasks-monitring','TaskController@tasks_monitring')->name('tasks-monitring');
 

@@ -29,30 +29,42 @@ class TaskController extends Controller
 
     public function store_task(TaskStoreValidation $request){
 
-      $task = new Task ;
 
-      $task->employee_id = $request->employee_id;
-      $task->month_id = $request->month_id;
-      $task->title = $request->title;
-      $task->description = $request->description;
-      $task->url = $request->url;
-      $task->module = $request->module;
-      $task->deliverable_id = $request->deliverable_id;
-      $task->project_id = $request->project_id;
+            foreach($request->url as $url_key=>$url_val){
+            
+                foreach($request->deliverable_id as $deliverable_key=>$deliverable_val){
+    
+                    if($url_key === $deliverable_key){
+    
+                        
+                        $task = new Task ;
+    
+                        $task->employee_id = $request->employee_id;
+                        $task->month_id = $request->month_id;
+                        $task->title = $request->title;
+                        $task->description = $request->description;
+                        $task->url = $url_val;
+                        $task->module = $request->module;
+                        $task->deliverable_id = $deliverable_val;
+                        $task->project_id = $request->project_id;
+                  
+                        $task->save();
+    
+    
+    
+                    }
+    
+                }
+    
+            }
 
-      $task->save();
-      
+            return \redirect()->route('/');
 
-       
         
-      $employees = Employee::Select('id', 'name')->get();
-      $months = Month::Select('id', 'name')->get();
-      $projects = Project::Select('id', 'name')->get();
-      $deliverables = Deliverable::Select('id', 'name')->get();
-      
 
+        
+        
 
-      return view('tasks.index',compact('employees', 'months', 'projects', 'deliverables'));
 
 
     }

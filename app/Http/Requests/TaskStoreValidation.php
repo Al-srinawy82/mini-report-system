@@ -27,9 +27,9 @@ class TaskStoreValidation extends FormRequest
             'employee_id' => 'required|integer',
             'month_id' => 'required|integer',
             'description' => 'required|String',
-            'url' => 'required|URL',
+            'url' => 'required|array',
             'module' => 'required|String|max:191',
-            'deliverable_id' => 'required|integer',
+            'deliverable_id' => 'required|array',
             'project_id' => 'required|integer',
         ];
     }
